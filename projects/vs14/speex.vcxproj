@@ -34,6 +34,72 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\libspeex\bits.c" />
+    <ClCompile Include="..\..\libspeex\cb_search.c" />
+    <ClCompile Include="..\..\libspeex\exc_10_16_table.c" />
+    <ClCompile Include="..\..\libspeex\exc_10_32_table.c" />
+    <ClCompile Include="..\..\libspeex\exc_20_32_table.c" />
+    <ClCompile Include="..\..\libspeex\exc_5_256_table.c" />
+    <ClCompile Include="..\..\libspeex\exc_5_64_table.c" />
+    <ClCompile Include="..\..\libspeex\exc_8_128_table.c" />
+    <ClCompile Include="..\..\libspeex\fftwrap.c" />
+    <ClCompile Include="..\..\libspeex\filters.c" />
+    <ClCompile Include="..\..\libspeex\gain_table.c" />
+    <ClCompile Include="..\..\libspeex\gain_table_lbr.c" />
+    <ClCompile Include="..\..\libspeex\hexc_10_32_table.c" />
+    <ClCompile Include="..\..\libspeex\hexc_table.c" />
+    <ClCompile Include="..\..\libspeex\high_lsp_tables.c" />
+    <ClCompile Include="..\..\libspeex\kiss_fft.c" />
+    <ClCompile Include="..\..\libspeex\kiss_fftr.c" />
+    <ClCompile Include="..\..\libspeex\lpc.c" />
+    <ClCompile Include="..\..\libspeex\lsp.c" />
+    <ClCompile Include="..\..\libspeex\lsp_tables_nb.c" />
+    <ClCompile Include="..\..\libspeex\ltp.c" />
+    <ClCompile Include="..\..\libspeex\modes.c" />
+    <ClCompile Include="..\..\libspeex\modes_wb.c" />
+    <ClCompile Include="..\..\libspeex\nb_celp.c" />
+    <ClCompile Include="..\..\libspeex\quant_lsp.c" />
+    <ClCompile Include="..\..\libspeex\sb_celp.c" />
+    <ClCompile Include="..\..\libspeex\smallft.c" />
+    <ClCompile Include="..\..\libspeex\speex.c" />
+    <ClCompile Include="..\..\libspeex\speex_callbacks.c" />
+    <ClCompile Include="..\..\libspeex\speex_header.c" />
+    <ClCompile Include="..\..\libspeex\stereo.c" />
+    <ClCompile Include="..\..\libspeex\vbr.c" />
+    <ClCompile Include="..\..\libspeex\vq.c" />
+    <ClCompile Include="..\..\libspeex\window.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\speex\speex.h" />
+    <ClInclude Include="..\..\include\speex\speex_bits.h" />
+    <ClInclude Include="..\..\include\speex\speex_callbacks.h" />
+    <ClInclude Include="..\..\include\speex\speex_header.h" />
+    <ClInclude Include="..\..\include\speex\speex_stereo.h" />
+    <ClInclude Include="..\..\include\speex\speex_types.h" />
+    <ClInclude Include="..\..\libspeex\cb_search.h" />
+    <ClInclude Include="..\..\libspeex\fftwrap.h" />
+    <ClInclude Include="..\..\libspeex\filters.h" />
+    <ClInclude Include="..\..\libspeex\filters_sse.h" />
+    <ClInclude Include="..\..\libspeex\kiss_fft.h" />
+    <ClInclude Include="..\..\libspeex\kiss_fftr.h" />
+    <ClInclude Include="..\..\libspeex\lpc.h" />
+    <ClInclude Include="..\..\libspeex\lsp.h" />
+    <ClInclude Include="..\..\libspeex\ltp.h" />
+    <ClInclude Include="..\..\libspeex\ltp_sse.h" />
+    <ClInclude Include="..\..\libspeex\math_approx.h" />
+    <ClInclude Include="..\..\libspeex\modes.h" />
+    <ClInclude Include="..\..\libspeex\nb_celp.h" />
+    <ClInclude Include="..\..\libspeex\quant_lsp.h" />
+    <ClInclude Include="..\..\libspeex\sb_celp.h" />
+    <ClInclude Include="..\..\libspeex\stack_alloc.h" />
+    <ClInclude Include="..\..\libspeex\vbr.h" />
+    <ClInclude Include="..\..\libspeex\vq.h" />
+    <ClInclude Include="..\..\win32\config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\win32\libspeex.def" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6F14DA6F-F9E0-488E-95D6-CF74479C6C4E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -186,8 +252,8 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -196,6 +262,24 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -203,8 +287,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Lib>
@@ -213,6 +297,24 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -222,9 +324,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -233,6 +335,24 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -242,9 +362,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <SubSystem>Windows</SubSystem>
@@ -252,6 +372,24 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -259,9 +397,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -273,7 +411,26 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\libspeex.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -281,9 +438,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -294,7 +451,26 @@
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\libspeex.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
@@ -304,9 +480,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -320,7 +496,26 @@
       <LargeAddressAware>true</LargeAddressAware>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\libspeex.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -330,10 +525,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ShowIncludes>true</ShowIncludes>
+      <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -346,7 +540,26 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\libspeex.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\speex\*.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
