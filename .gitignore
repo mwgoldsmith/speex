@@ -38,3 +38,5 @@ src/speexdec
 src/speexenc
 stamp-*
 patches
+*.opendb
+.vs/
