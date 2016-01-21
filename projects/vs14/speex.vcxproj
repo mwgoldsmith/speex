@@ -254,6 +254,8 @@
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -280,6 +282,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -290,6 +295,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <PreprocessorDefinitions>HAVE_CONFIG_H;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Lib>
       <SubSystem>Windows</SubSystem>
@@ -315,6 +322,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -327,6 +337,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -353,6 +365,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -365,6 +380,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>HAVE_CONFIG_H;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Lib>
       <SubSystem>Windows</SubSystem>
@@ -390,6 +407,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -400,6 +420,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -431,6 +453,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -441,6 +466,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -471,6 +498,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
@@ -483,6 +513,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -516,6 +548,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -528,6 +563,8 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\libspeex;$(ProjectDir)..\..\win32;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>SPEEX_DLL_BUILD;HAVE_CONFIG_H;NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -560,6 +597,9 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
 )</Command>
     </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
